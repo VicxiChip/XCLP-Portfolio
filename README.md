@@ -41,4 +41,4 @@ XCLP-Portfolio/
 
 If you'd like to build on this portfolio or use it as a template:
 
-[![Fork](https://img.shields.io/badge/Fork-This%20Repo-lightgrey?style=for-the-badge&logo=github)](https://github.com/vicxichip/XCLP-Portfolio/fork)
+[![Fork](https://img.shields.io/badge/Fork-This%20Repo-lightgrey?style=for-the-badge&logo=github)](https://github.com/VicxiChip/XCLP-Portfolio)
