@@ -34,3 +34,11 @@ XCLP-Portfolio/
 │   └── videos/
 ├── README.md
 ├── LICENSE
+
+---
+
+## 🍴 Fork This Project
+
+If you'd like to build on this portfolio or use it as a template:
+
+[![Fork](https://img.shields.io/badge/Fork-This%20Repo-lightgrey?style=for-the-badge&logo=github)](https://vicxichip.github.io/XCLP-Portfolio/fork)
