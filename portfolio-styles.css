@@ -273,10 +273,61 @@ footer .social {
 }
 
 /* Responsive tweaks */
-@media (max-width:700px) {
-  .top-bar { top: 8px; height: 52px; }
-  .brand { left: 12px; padding: 6px 10px; }
+@media (max-width: 700px) {
+  /* Tabs stack vertically on small screens */
+  .tabs {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding: 10px;
+    border-radius: 12px;
+  }
 
+  .tab {
+    font-size: 15px;
+    padding: 10px 16px;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Pane sections adjust padding and layout */
+  main {
+    padding: 100px 16px 32px;
+  }
+
+  section {
+    width: 100%;
+    margin: 16px auto;
+  }
+
+  .card {
+    width: 100%;
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .avatar {
+    width: 180px;
+    height: 180px;
+  }
+
+  .card h2 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 15px;
+  }
+
+  .showcase-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .showcase-card {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
 }
 
 .fork-section {
@@ -301,3 +352,4 @@ footer .social {
 .fork-button:hover {
   background-color: #444c56;
 }
+
