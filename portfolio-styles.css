@@ -276,4 +276,20 @@ footer .social {
 @media (max-width:700px) {
   .top-bar { top: 8px; height: 52px; }
   .brand { left: 12px; padding: 6px 10px; }
+
+}
+
+.fork-button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background-color: #24292e;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.fork-button:hover {
+  background-color: #444c56;
 }
