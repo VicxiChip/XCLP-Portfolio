@@ -1,100 +1,156 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>XCLP Portfolio</title>
-  <meta name="description" content="Chiyam's portfolio showcasing creative tech projects, certifications, and tools.">
-  <link rel="stylesheet" href="portfolio-styles.css">
-</head>
-<body>
-  <canvas id="background-canvas"></canvas>
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.tabs .tab');
+  const currentPage = window.location.pathname.split('/').pop(); // e.g. "education.html"
 
-<header class="top-bar" role="banner">
-  <div class="brand" aria-hidden="false">XCLP</div>
+  tabs.forEach(tab => {
+    const href = tab.getAttribute('href');
+    if (href === currentPage || (href === 'index.html' && currentPage === '')) {
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+    } else {
+      tab.classList.remove('active');
+      tab.setAttribute('aria-selected', 'false');
+    }
+  });
+});
 
-  <nav class="tabs" role="navigation" aria-label="Site sections">
-    <a class="tab active" href="Index.html">Home</a>
-    <a class="tab" href="Education.html">Education</a>
-    <a class="tab" href="work.html">Work</a>
-    <a class="tab" href="tools.html">Tools</a>
-    <a class="tab" href="contact.html">Contact</a>
-  </nav>
-</header>
+    // Canvas background animation (light particle + connect lines)
+    const canvas = document.getElementById('background-canvas');
+    const ctx = canvas.getContext('2d');
+    let w, h;
+    let particles = [];
+    function resize() {
+      w = canvas.width = innerWidth;
+      h = canvas.height = innerHeight;
+    }
+    window.addEventListener('resize', resize, { passive: true });
+    resize();
 
-  <main>
-    <section id="home" class="pane active" aria-labelledby="home-title">
-      <article class="card" role="region" aria-labelledby="home-title">
-        <div class="intro-block">
-          <img src="Assets/images/Avatar.jpg" alt="Avatar" class="avatar animated-avatar">
-          <h2 id="home-title">Hello! I'm Xhiro Chiyam L.Pagnas. A 3D artist, Beginner Animator, & Editor.</h2>
-          <p>La Trinidad, Philippines</p>
-          <h2>About Me:</h2>
-          <p>A self-taught 3D artist specializing in Blender with experience since 2019, focused on modeling, and shading. The self-taught animating, and editing started last year.</p>
-          <a href="#work" class="cta-button">Explore My Work</a>
-          <p class="muted-note">*Or scroll down to see two examples*</p>
-        </div>
-      </article>
+    class Particle {
+      constructor() {
+        this.x = Math.random() * w;
+        this.y = Math.random() * h;
+        this.vx = (Math.random() - 0.5) * 0.6;
+        this.vy = (Math.random() - 0.5) * 0.6;
+        this.r = 1 + Math.random() * 2;
+      }
+      step() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > w) this.vx *= -1;
+        if (this.y < 0 || this.y > h) this.vy *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(200,220,255,0.12)';
+        ctx.fill();
+      }
+    }
 
-<!-- Showcase row: two cards inside Home pane only -->
-<div class="showcase-row" aria-label="Showcase cards">
-  <div class="showcase-scroll">
-    <!-- Card 1 -->
-    <article class="showcase-card">
-      <div class="card-left">
-        <img src="Assets/images/SPD2.png" alt="Project 1 still" class="card-image">
-      </div>
-    </article>
+    function init(n=160) {
+      particles = [];
+      for (let i=0;i<n;i++) particles.push(new Particle());
+    }
+    init();
 
-    <!-- Card 2 -->
-    <article class="showcase-card">
-      <div class="card-right">
-        <video class="card-anim" data-repeat-delay="3500" muted playsinline preload="metadata">
-          <source src="Assets/videos/anim-2.webm" type="video/webm">
-          <source src="Assets/videos/HBKC.mp4" type="video/mp4">
-        </video>
-      </div>
-    </article>
-  </div>
-</div>
-  </main>
+    let mouse = { x: w/2, y: h/2, active: false };
+    canvas.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; mouse.active = true; });
+    canvas.addEventListener('mouseleave', () => { mouse.active = false; });
 
-<footer>
-<div class="social" role="contentinfo" aria-label="Social links">
-  <a class="social-link" href="https://x.com/yourhandle" target="_blank" rel="noopener" aria-label="Twitter X">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 0 0 1.88-2.38 8.59 8.59 0 0 1-2.72 1.04 4.28 4.28 0 0 0-7.3 3.9A12.14 12.14 0 0 1 3.15 4.6a4.28 4.28 0 0 0 1.32 5.71 4.25 4.25 0 0 1-1.94-.54v.05a4.28 4.28 0 0 0 3.43 4.2 4.3 4.3 0 0 1-1.93.07 4.29 4.29 0 0 0 4 2.97A8.6 8.6 0 0 1 2 19.54a12.14 12.14 0 0 0 6.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19 0-.38-.01-.57A8.7 8.7 0 0 0 24 5.5a8.5 8.5 0 0 1-2.54.7z" fill="currentColor"/>
-    </svg>
-  </a>
+    function draw() {
+      ctx.clearRect(0,0,w,h);
+      // subtle gradient base
+      const g = ctx.createLinearGradient(0,0,w,h);
+      g.addColorStop(0,'#001226'); g.addColorStop(1,'#061320');
+      ctx.fillStyle = g;
+      ctx.fillRect(0,0,w,h);
 
-  <a class="social-link" href="https://www.linkedin.com/in/yourhandle" target="_blank" rel="noopener" aria-label="LinkedIn">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M4.98 3.5a2.5 2.5 0 1 1-.01 0zM3 8.5h4v12H3zM9 8.5h3.8v1.7h.05c.53-1 1.82-2.05 3.75-2.05 4 0 4.75 2.6 4.75 6v6.35h-4v-5.6c0-1.34 0-3.07-1.87-3.07-1.87 0-2.16 1.47-2.16 2.95v5.72h-4z" fill="currentColor"/>
-    </svg>
-  </a>
+      for (let i=0;i<particles.length;i++) {
+        const p = particles[i];
+        p.step();
+        p.draw();
 
-  <a class="social-link" href="https://www.facebook.com/yourhandle" target="_blank" rel="noopener" aria-label="Facebook">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07C2 17.1 5.66 21.2 10.44 21.93v-6.88H7.9v-2.98h2.54V9.8c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.2 2.24.2v2.47h-1.27c-1.25 0-1.64.78-1.64 1.57v1.9h2.79l-.45 2.98h-2.34V21.9C18.34 21.2 22 17.1 22 12.07z" fill="currentColor"/>
-    </svg>
-  </a>
+        for (let j=i+1;j<particles.length;j++) {
+          const q = particles[j];
+          const dx = p.x - q.x, dy = p.y - q.y;
+          const dist = Math.hypot(dx,dy);
+          if (dist < 110) {
+            ctx.beginPath();
+            ctx.moveTo(p.x,p.y);
+            ctx.lineTo(q.x,q.y);
+            ctx.strokeStyle = `rgba(150,190,255,${0.09 * (1 - dist/110)})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
 
-  <a class="social-link" href="https://www.instagram.com/yourhandle" target="_blank" rel="noopener" aria-label="Instagram">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6zm6.4-.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2zM12 9.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z" fill="currentColor"/>
-    </svg>
-  </a>
-</div>
+        if (mouse.active) {
+          const mdx = p.x - mouse.x, mdy = p.y - mouse.y;
+          const md = Math.hypot(mdx,mdy);
+          if (md < 140) {
+            ctx.beginPath();
+            ctx.moveTo(p.x,p.y);
+            ctx.lineTo(mouse.x,mouse.y);
+            ctx.strokeStyle = `rgba(170,200,255,${0.12 * (1 - md/140)})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
 
-  <div class="fork-section">
-    🍴 Want to contribute or remix this portfolio?
-    <a href="https://github.com/VicxiChip/XCLP-Portfolio" target="_blank" class="fork-button">Fork it on GitHub</a>
-  </div>
+      requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
 
-  <p>&copy; 2024 XCLP Portfolio. All rights reserved.</p>
-</footer>
+    // Controlled replay for showcase videos
+function setupShowcasePlayback() {
+  const anims = document.querySelectorAll('.card-anim');
 
-  <!-- load external script file at end of body -->
-  <script src="portfolio-scripts.js" defer></script>
-</body>
-</html>
+  anims.forEach(video => {
+    video.muted = true;
+    video.loop = false;
+
+    const delayAttr = video.dataset.repeatDelay || video.getAttribute('data-repeat-delay');
+    const delay = parseInt(delayAttr, 10) || 2000;
+
+    // Play once when metadata is ready
+    video.addEventListener('loadedmetadata', () => {
+      video.play().catch(() => {
+        // Autoplay might be blocked; user interaction may be required
+      });
+    });
+
+    // Replay after delay when video ends
+    video.addEventListener('ended', () => {
+      setTimeout(() => {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }, delay);
+    });
+
+    // Pause when out of view to save resources
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (video.paused && !video.ended) {
+            video.play().catch(() => {});
+          }
+        } else {
+          if (!video.paused) {
+            video.pause();
+          }
+        }
+      });
+    }, { threshold: 0.25 });
+
+    observer.observe(video);
+  });
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupShowcasePlayback);
+} else {
+  setupShowcasePlayback();
+}
