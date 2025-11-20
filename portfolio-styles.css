@@ -312,6 +312,82 @@ footer .social {
   margin-top: 6px;
 }
 
+/* Achievements Page Cards */
+.achievements-row {
+  width: min(900px, 94%);
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.achievement-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 14px;
+  box-shadow: 0 18px 48px rgba(2,8,23,0.55);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(110,168,255,0.25);
+}
+
+.achievement-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.achievement-card .card-header img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.achievement-card .card-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #eaffff;
+}
+
+.achievement-card .card-list {
+  list-style: disc;
+  padding-left: 100px; /* aligns list under text, not under photo */
+  margin: 0;
+  color: #cfeeff;
+  font-size: 15px;
+}
+
+.achievement-card .card-list li {
+  margin-bottom: 4px;
+}
+
+.achievement-card .list-title {
+  margin: 8px 0 4px 100px; /* aligns with text, not photo */
+  font-size: 16px;
+  font-weight: 600;
+  color: #eaffff;
+}
+
+.achievement-card .card-list {
+  list-style: disc;
+  padding-left: 120px; /* keeps list aligned under text */
+  margin: 0 0 12px 0;
+  color: #cfeeff;
+  font-size: 15px;
+}
+
+.achievement-card .card-list li {
+  margin-bottom: 4px;
+}
 
 /* Responsive tweaks */
 @media (max-width: 700px) {
