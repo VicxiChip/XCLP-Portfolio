@@ -389,6 +389,38 @@ footer .social {
   margin-bottom: 4px;
 }
 
+ /* Family */
+.family-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background: #f9f9f9;
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.family-photos {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.photo img {
+  width: 200px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.photo p {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.family-text {
+  margin-top: 20px;
+}
+
 /* Responsive tweaks */
 @media (max-width: 700px) {
   /* Tabs stack vertically on small screens */
@@ -424,38 +456,6 @@ footer .social {
   .education-card img { width: 160px; height: 160px; }
 }
 
- /* Family */
-.family-card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  background: #f9f9f9;
-  max-width: 900px;
-  margin: 40px auto;
-  text-align: center;
-}
-
-.family-photos {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-
-.photo img {
-  width: 200px;
-  height: auto;
-  border-radius: 6px;
-}
-
-.photo p {
-  margin-top: 8px;
-  font-weight: bold;
-}
-
-.family-text {
-  margin-top: 20px;
-}
-
 .fork-section { margin-top: 1em; text-align: center; font-size: 0.95em; color: #444; }
 .fork-button {
   display: inline-block;
@@ -469,4 +469,5 @@ footer .social {
   transition: background-color 0.3s ease;
 }
 .fork-button:hover { background-color: #444c56; }
+
 
