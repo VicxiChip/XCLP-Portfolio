@@ -325,11 +325,13 @@ footer .social {
 
 /* Achievements Page Cards */
 .achievements-row {
-  width: min(900px, 94%);
+  width: min(1200px, 94%);   /* widened to fit multiple cards */
   margin: 40px auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;       /* row instead of column */
   gap: 24px;
+  flex-wrap: wrap;           /* allows wrapping on smaller screens */
+  justify-content: center;   /* center cards horizontally */
 }
 
 .achievement-card {
@@ -342,6 +344,9 @@ footer .social {
   flex-direction: column;
   gap: 12px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  flex: 1 1 300px;           /* flexible width, min ~300px */
+  max-width: 350px;          /* prevents cards from stretching too wide */
 }
 
 .achievement-card:hover {
@@ -501,6 +506,7 @@ footer .social {
   transition: background-color 0.3s ease;
 }
 .fork-button:hover { background-color: #444c56; }
+
 
 
 
