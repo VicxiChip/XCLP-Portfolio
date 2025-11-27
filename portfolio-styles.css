@@ -1,6 +1,17 @@
 /* Reset and base */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; font-family: Inter, system-ui, Arial, sans-serif; background:#031021; color:#e6f2ff; scroll-behavior: smooth; }
+html, body { 
+  height: 100%; 
+  font-family: Inter, system-ui, Arial, sans-serif; 
+  background:#031021; 
+  color:#e6f2ff; 
+  scroll-behavior: smooth; 
+}
+
+body {
+  overflow-y: hidden; /* disables vertical scrolling */
+  overflow-x: hidden; /* disables horizontal scrolling */
+}
 
 /* Canvas background */
 #background-canvas {
@@ -490,6 +501,7 @@ footer .social {
   transition: background-color 0.3s ease;
 }
 .fork-button:hover { background-color: #444c56; }
+
 
 
 
