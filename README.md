@@ -23,20 +23,6 @@ Visit the portfolio: [https://xhiro.github.io/xhiro-portfolio](https://vicxichip
 
 ---
 
-## 📁 Project Structure
-
-XCLP-Portfolio/
-├── index.html
-├── portfolio-styles.css
-├── portfolio-scripts.js
-├── assets/
-│   ├── images/
-│   └── videos/
-├── README.md
-├── LICENSE
-
----
-
 ## 🍴 Fork This Project
 
 If you'd like to build on this portfolio or use it as a template:
