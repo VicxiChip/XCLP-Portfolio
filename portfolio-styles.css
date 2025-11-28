@@ -487,13 +487,11 @@ footer .social {
 }
 
 .batchmates-photo img {
-  width: 100%;          /* full width inside card */
-  height: auto;         /* keep aspect ratio */
+  width: 100%;       /* fills the card width */
+  height: auto;      /* keeps aspect ratio */
+  max-height: none;  /* removes any hidden limits */
   border-radius: 12px;
   object-fit: cover;
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 6px 18px rgba(2,8,23,0.35);
-  transition: transform 0.25s ease;
 }
 
 .batchmates-photo img:hover {
@@ -555,4 +553,5 @@ footer .social {
   transition: background-color 0.3s ease;
 }
 .fork-button:hover { background-color: #444c56; }
+
 
