@@ -464,6 +464,49 @@ footer .social {
   line-height: 1.6;
 }
 
+/* Batchmates */
+.batchmates-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 14px;
+  box-shadow: 0 18px 48px rgba(2,8,23,0.55);
+  padding: 24px;
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.batchmates-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(110,168,255,0.25);
+}
+
+.batchmates-photo {
+  margin-bottom: 20px;
+}
+
+.batchmates-photo img {
+  width: 100%;          /* full width inside card */
+  height: auto;         /* keep aspect ratio */
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 6px 18px rgba(2,8,23,0.35);
+  transition: transform 0.25s ease;
+}
+
+.batchmates-photo img:hover {
+  transform: scale(1.02);
+}
+
+.batchmates-photo p {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #cfeeff;
+  line-height: 1.6;
+}
+
 /* Responsive tweaks */
 @media (max-width: 700px) {
   /* Tabs stack vertically on small screens */
@@ -512,3 +555,4 @@ footer .social {
   transition: background-color 0.3s ease;
 }
 .fork-button:hover { background-color: #444c56; }
+
