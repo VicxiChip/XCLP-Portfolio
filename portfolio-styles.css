@@ -1,3 +1,4 @@
+
 /* Reset and base */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { 
@@ -262,13 +263,15 @@ footer .social {
   border-radius: 8px;
 }
 
-/* Education Page Cards - stacked list */
+/* Education Page Cards - side by side */
 .education-row {
-  width: min(700px, 94%);
+  width: min(1200px, 94%);   /* wider container to fit multiple cards */
   margin: 40px auto;
   display: flex;
-  flex-direction: column;   /* stack vertically */
+  flex-direction: row;       /* row instead of column */
   gap: 24px;
+  flex-wrap: wrap;           /* allow wrapping on smaller screens */
+  justify-content: center;   /* center cards horizontally */
 }
 
 .education-card {
@@ -283,6 +286,9 @@ footer .social {
   align-items: center;
   gap: 12px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  flex: 1 1 280px;           /* flexible width, min ~280px */
+  max-width: 380px;          /* prevents cards from stretching too wide */
 }
 
 .education-card:hover {
@@ -346,7 +352,7 @@ footer .social {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 
   flex: 1 1 300px;           /* flexible width, min ~300px */
-  max-width: 350px;          /* prevents cards from stretching too wide */
+  max-width: 600px;          /* prevents cards from stretching too wide */
 }
 
 .achievement-card:hover {
@@ -506,8 +512,3 @@ footer .social {
   transition: background-color 0.3s ease;
 }
 .fork-button:hover { background-color: #444c56; }
-
-
-
-
-
