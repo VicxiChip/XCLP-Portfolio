@@ -154,30 +154,3 @@ if (document.readyState === 'loading') {
 } else {
   setupShowcasePlayback();
 }
-
-/* -------------------------------
-   Responsive Layout for All Pages
-   ------------------------------- */
-function applyResponsiveLayout() {
-  // Scale main sections
-  const mainSections = document.querySelectorAll('main section');
-  mainSections.forEach(section => {
-    section.style.maxWidth = `${Math.min(window.innerWidth * 0.94, 900)}px`;
-    section.style.margin = '5vh auto';
-    section.style.padding = '2vw';
-  });
-
-  // Scale images
-  const imgs = document.querySelectorAll('main img');
-  imgs.forEach(img => {
-    img.style.width = '100%';
-    img.style.height = 'auto';
-    img.style.maxHeight = '80vh';
-    img.style.objectFit = 'cover';
-    img.style.borderRadius = '12px';
-  });
-}
-
-// Run once and on resize
-document.addEventListener('DOMContentLoaded', applyResponsiveLayout);
-window.addEventListener('resize', applyResponsiveLayout, { passive: true });
