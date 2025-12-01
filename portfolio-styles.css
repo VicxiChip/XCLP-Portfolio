@@ -93,12 +93,9 @@ body {
   box-shadow: 0 6px 18px rgba(110,168,255,0.12);
 }
 
-/* Optional: page-scoped active tab without JS */
-body.home .tabs a[href="index.html"],
-body.education .tabs a[href="education.html"],
-body.work .tabs a[href="work.html"],
-body.tools .tabs a[href="tools.html"],
-body.contact .tabs a[href="contact.html"] {
+body.achievements .tabs a[href="achievements.html"],
+body.my_family .tabs a[href="my_family.html"],
+body.batchmates .tabs a[href="batchmates.html"] {
   background: linear-gradient(90deg,#6ea8ff,#7ee0b8);
   color: #012226;
   box-shadow: 0 6px 18px rgba(110,168,255,0.12);
@@ -331,13 +328,12 @@ footer .social {
 
 /* Achievements Page Cards */
 .achievements-row {
-  width: min(1200px, 94%);   /* widened to fit multiple cards */
+  width: min(1200px, 94%);
   margin: 40px auto;
   display: flex;
-  flex-direction: row;       /* row instead of column */
+  flex-wrap: wrap;
   gap: 24px;
-  flex-wrap: wrap;           /* allows wrapping on smaller screens */
-  justify-content: center;   /* center cards horizontally */
+  justify-content: center;
 }
 
 .achievement-card {
@@ -349,15 +345,15 @@ footer .social {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  flex: 1 1 300px;
+  max-width: 600px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-
-  flex: 1 1 300px;           /* flexible width, min ~300px */
-  max-width: 600px;          /* prevents cards from stretching too wide */
 }
 
 .achievement-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 24px 60px rgba(110,168,255,0.25);
+  will-change: transform;
 }
 
 .achievement-card .card-header {
@@ -380,20 +376,9 @@ footer .social {
   color: #eaffff;
 }
 
-.achievement-card .card-list {
-  list-style: disc;
-  padding-left: 100px; /* aligns list under text, not under photo */
-  margin: 0;
-  color: #cfeeff;
-  font-size: 15px;
-}
-
-.achievement-card .card-list li {
-  margin-bottom: 4px;
-}
-
 .achievement-card .list-title {
-  margin: 8px 0 4px 100px; /* aligns with text, not photo */
+  margin: 8px 0 4px 0;
+  padding-left: 2em;
   font-size: 16px;
   font-weight: 600;
   color: #eaffff;
@@ -401,7 +386,7 @@ footer .social {
 
 .achievement-card .card-list {
   list-style: disc;
-  padding-left: 120px; /* keeps list aligned under text */
+  padding-left: 2em;
   margin: 0 0 12px 0;
   color: #cfeeff;
   font-size: 15px;
@@ -409,6 +394,14 @@ footer .social {
 
 .achievement-card .card-list li {
   margin-bottom: 4px;
+}
+
+@media (max-width: 700px) {
+  .achievement-card .card-list,
+  .achievement-card .list-title {
+    padding-left: 1.2em;
+    margin-left: 0;
+  }
 }
 
 /* Family */
@@ -427,13 +420,21 @@ footer .social {
 .family-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 24px 60px rgba(110,168,255,0.25);
+  will-change: transform;
 }
 
 .family-photos {
   display: flex;
+  flex-wrap: wrap;       /* responsive wrapping */
   justify-content: center;
   gap: 24px;
   margin-bottom: 20px;
+}
+
+.photo {
+  flex: 1 1 200px;
+  max-width: 280px;
+  text-align: center;
 }
 
 .photo img {
@@ -448,9 +449,10 @@ footer .social {
 
 .photo img:hover {
   transform: scale(1.05);
+  will-change: transform;
 }
 
-.photo p {
+.photo h3 {
   margin-top: 10px;
   font-weight: 600;
   font-size: 16px;
@@ -460,7 +462,7 @@ footer .social {
 .family-text {
   margin-top: 20px;
   font-size: 15px;
-  color: #cfeeff;
+  color: #bcdff8;   /* slightly darker for readability */
   line-height: 1.6;
 }
 
@@ -553,5 +555,6 @@ footer .social {
   transition: background-color 0.3s ease;
 }
 .fork-button:hover { background-color: #444c56; }
+
 
 
