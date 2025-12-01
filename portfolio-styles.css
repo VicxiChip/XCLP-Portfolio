@@ -101,6 +101,15 @@ body.batchmates .tabs a[href="batchmates.html"] {
   box-shadow: 0 6px 18px rgba(110,168,255,0.12);
 }
 
+.tab:hover,
+.education-card:hover,
+.achievement-card:hover,
+.photo img:hover,
+.batchmates-card:hover,
+.family-card:hover {
+  will-change: transform;
+}
+
 /* Layout and home card */
 main {
   position: relative;
@@ -555,6 +564,7 @@ footer .social {
   transition: background-color 0.3s ease;
 }
 .fork-button:hover { background-color: #444c56; }
+
 
 
 
