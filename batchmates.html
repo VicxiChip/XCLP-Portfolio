@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>XCLP Portfolio - Batchmates</title>
-  <meta name="description" content="Group photo of batchmates of Xhiro Chiyam L. Pagnas">
+  <meta name="description" content="Group photo of Xhiro Chiyam L. Pagnas and batchmates, celebrating shared experiences and teamwork.">
   <link rel="stylesheet" href="portfolio-styles.css">
 </head>
 <body class="batchmates">
   <canvas id="background-canvas"></canvas>
 
 <header class="top-bar" role="banner">
-  <div class="brand" aria-hidden="false">XCLP</div>
+  <div class="brand">XCLP</div>
 
   <nav class="tabs" role="navigation" aria-label="Site sections">
     <a class="tab" href="index.html">Home</a>
@@ -23,14 +23,17 @@
 </header>
 
 <main>
-  <section class="batchmates-card">
-    <h2>My Batchmates</h2>
-    <div class="batchmates-photo">
-      <img src="Assets/images/batchmates-group.jpg" alt="Group photo of my batchmates">
+  <section class="batchmates-card" aria-labelledby="batchmates-title">
+    <h2 id="batchmates-title">My Batchmates</h2>
+    <p>Here are the friends and classmates who shared this journey with me.</p>
+
+    <article class="batchmates-photo">
+      <img src="Assets/images/Group_Photo.jpg" alt="Group photo of my batchmates" loading="lazy">
       <p>
-        This is a group photo of my batchmates. It represents our shared experiences, lack of sleep and the pressure of failing our professors.
+        This group photo represents our shared experiences, teamwork, and perseverance through challenges. 
+        From late nights of studying to overcoming academic pressures, we supported each other and grew together.
       </p>
-    </div>
+    </article>
   </section>
 </main>
 
