@@ -269,6 +269,37 @@ footer .social {
   border-radius: 8px;
 }
 
+/* Side navigation buttons */
+.nav-button {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #dfefff;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgba(2,8,23,0.45);
+  text-decoration: none;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+  z-index: 1004;
+}
+
+.nav-button:hover {
+  background: linear-gradient(90deg,#6ea8ff,#7ee0b8);
+  color: #012226;
+  transform: translateY(-50%) scale(1.1);
+  will-change: transform;
+}
+
+.nav-button.prev { left: 20px; }
+.nav-button.next { right: 20px; }
+
 /* Education Page Cards - side by side */
 .education-row {
   width: min(1200px, 94%);   /* wider container to fit multiple cards */
@@ -564,6 +595,7 @@ footer .social {
   transition: background-color 0.3s ease;
 }
 .fork-button:hover { background-color: #444c56; }
+
 
 
 
