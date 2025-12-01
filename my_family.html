@@ -4,51 +4,47 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>XCLP Portfolio - My Family</title>
-  <meta name="description" content="Family Photos of Xhiro Chiyam L. Pagnas">
+  <meta name="description" content="Meet the family of Xhiro Chiyam L. Pagnas with photos and personal notes.">
   <link rel="stylesheet" href="portfolio-styles.css">
 </head>
 <body class="my_family">
   <canvas id="background-canvas"></canvas>
 
 <header class="top-bar" role="banner">
-  <div class="brand" aria-hidden="false">XCLP</div>
+  <div class="brand">XCLP</div>
 
   <nav class="tabs" role="navigation" aria-label="Site sections">
-    <a class="tab active" href="index.html">Home</a>
+    <a class="tab" href="index.html">Home</a>
     <a class="tab" href="education.html">Educational Attainment</a>
     <a class="tab" href="achievements.html">Achievements</a>
-    <a class="tab" href="my_family.html">My Family</a>
+    <a class="tab active" href="my_family.html">My Family</a>
     <a class="tab" href="batchmates.html">Batchmates</a>
   </nav>
 </header>
 
 <main>
-  <section class="family-card">
-    <h2>My Family</h2>
+  <section class="family-card" aria-labelledby="family-title">
+    <h2 id="family-title">My Family</h2>
+    <p>Family is my foundation. Here are the people who inspire and support me every day.</p>
+
     <div class="family-photos">
-      <div class="photo">
-        <p>My Mom</p>
-        <img src="Assets/images/mom.png" alt="My Mom">
-      <p>
-        My Mom, Richeal, I am thankful for her hardwork around the house and the business she rans even across the world.
-      </p>
-      </div>
-      <div class="photo">
-        <p>My Dad</p>
-        <img src="Assets/images/dad.jpg" alt="My Dad">
-      <p>
-        My Dad, Micheal, im thankful for his teaching on how to run the machinery that runs the business and his hardwork to take care of me and sis when mom is gone to Malta
-      </p>
-      </div>
-      <div class="photo">
-        <p>My Sibling</p>
-        <img src="Assets/images/sibling.jpg" alt="My Sibling">
-      <p>
-        My Sibling, Shalumi, I thank her has kept me alive from my own young antics, and keeping an eye on me.
-      </p>
-      </div>
-    </div>
-    <div class="family-text">
+      <article class="photo">
+        <h3>My Mom</h3>
+        <img src="Assets/images/mom.png" alt="Photo of my mom, Richeal" loading="lazy">
+        <p>My mom, Richeal, works hard both at home and in managing our business, even across the world.</p>
+      </article>
+
+      <article class="photo">
+        <h3>My Dad</h3>
+        <img src="Assets/images/dad.jpg" alt="Photo of my dad, Micheal" loading="lazy">
+        <p>My dad, Micheal, taught me how to operate the machinery for our business and works tirelessly to care for me and my sister when mom is away in Malta.</p>
+      </article>
+
+      <article class="photo">
+        <h3>My Sibling</h3>
+        <img src="Assets/images/sibling.jpg" alt="Photo of my sibling, Shalumi" loading="lazy">
+        <p>My sibling, Shalumi, has always kept me safe from my childhood antics and continues to look out for me.</p>
+      </article>
     </div>
   </section>
 </main>
