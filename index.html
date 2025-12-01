@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>XCLP Portfolio</title>
-  <meta name="description" content="Chiyam's portfolio showcasing creative tech projects, certifications, and tools.">
+  <meta name="description" content="Portfolio of Xhiro Chiyam L. Pagnas showcasing creative tech projects, 3D art, animation, and editing.">
   <link rel="stylesheet" href="portfolio-styles.css">
 </head>
 <body>
   <canvas id="background-canvas"></canvas>
 
 <header class="top-bar" role="banner">
-  <div class="brand" aria-hidden="false">XCLP</div>
+  <div class="brand">XCLP</div>
 
   <nav class="tabs" role="navigation" aria-label="Site sections">
     <a class="tab active" href="index.html">Home</a>
@@ -24,33 +24,33 @@
 
 <main>
   <section id="home" class="pane active" aria-labelledby="home-title">
-    <article class="card" role="region" aria-labelledby="home-title">
+    <article class="card" aria-labelledby="home-title">
       <div class="intro-block">
-        <img src="Assets/images/Avatar.jpg" alt="Avatar" class="avatar animated-avatar">
-        <h2 id="home-title">Hello! I'm Xhiro Chiyam L.Pagnas. A 3D artist, Beginner Animator, & Editor.</h2>
+        <img src="Assets/images/Avatar.jpg" alt="Avatar of Xhiro Chiyam L. Pagnas" class="avatar animated-avatar" loading="lazy">
+        <h2 id="home-title">Hello! I'm Xhiro Chiyam L. Pagnas — 3D Artist, Beginner Animator, & Editor.</h2>
         <p>La Trinidad, Philippines</p>
         <h2>About Me:</h2>
-        <p>A self-taught 3D artist specializing in Blender with experience since 2019, focused on modeling, and shading. The self-taught animating, and editing started last year.</p>
-        <!-- Removed Explore My Work button and muted note -->
+        <p>A self-taught 3D artist specializing in Blender since 2019, focused on modeling and shading. I began animating and editing in 2024.</p>
       </div>
     </article>
 
-    <!-- Showcase row: two cards inside Home pane only -->
     <div class="showcase-row" aria-label="Showcase cards">
       <div class="showcase-scroll">
         <!-- Card 1 -->
         <article class="showcase-card">
           <div class="card-left">
-            <img src="Assets/images/SPD2.png" alt="Project 1 still" class="card-image">
+            <img src="Assets/images/SPD2.png" alt="Still image from Project 1" class="card-image" loading="lazy">
           </div>
         </article>
 
         <!-- Card 2 -->
         <article class="showcase-card">
           <div class="card-right">
-            <video class="card-anim" data-repeat-delay="3500" muted playsinline preload="metadata">
+            <video class="card-anim" controls muted playsinline preload="metadata">
               <source src="Assets/videos/anim-2.webm" type="video/webm">
               <source src="Assets/videos/HBKC.mp4" type="video/mp4">
+              <!-- Add captions for accessibility -->
+              <track src="Assets/captions/anim-2.vtt" kind="captions" srclang="en" label="English">
             </video>
           </div>
         </article>
@@ -64,12 +64,9 @@
     🍴 Want to contribute or remix this portfolio?
     <a href="https://github.com/VicxiChip/XCLP-Portfolio" target="_blank" class="fork-button">Fork it on GitHub</a>
   </div>
-
   <p>&copy; 2024 XCLP Portfolio. All rights reserved.</p>
 </footer>
 
-<!-- load external script file at end of body -->
 <script src="portfolio-scripts.js" defer></script>
 </body>
 </html>
-
