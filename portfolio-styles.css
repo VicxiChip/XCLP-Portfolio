@@ -269,36 +269,35 @@ footer .social {
   border-radius: 8px;
 }
 
-/* Side navigation buttons */
-.nav-button {
+/* Bottom-right navigation container */
+.bottom-nav {
   position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  font-size: 28px;
-  font-weight: bold;
-  color: #dfefff;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 50%;
-  box-shadow: 0 6px 18px rgba(2,8,23,0.45);
-  text-decoration: none;
-  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 12px;
   z-index: 1004;
+}
+
+/* Navigation buttons */
+.nav-button {
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.05);
+  color: #dfefff;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(2,8,23,0.45);
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
 }
 
 .nav-button:hover {
   background: linear-gradient(90deg,#6ea8ff,#7ee0b8);
   color: #012226;
-  transform: translateY(-50%) scale(1.1);
+  transform: scale(1.05);
   will-change: transform;
 }
-
-.nav-button.prev { left: 20px; }
-.nav-button.next { right: 20px; }
 
 /* Education Page Cards - side by side */
 .education-row {
@@ -595,6 +594,7 @@ footer .social {
   transition: background-color 0.3s ease;
 }
 .fork-button:hover { background-color: #444c56; }
+
 
 
 
