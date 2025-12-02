@@ -9,9 +9,20 @@ html, body {
   scroll-behavior: smooth; 
 }
 
-body {
-  overflow-y: hidden; /* disables vertical scrolling */
-  overflow-x: hidden; /* disables horizontal scrolling */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* no scroll */
+}
+
+main {
+  height: 100vh;              /* fills the viewport height */
+  display: flex;              /* centers content */
+  flex-direction: column;
+  justify-content: center;    /* vertical centering */
+  align-items: center;        /* horizontal centering */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Canvas background */
@@ -252,12 +263,14 @@ footer .social {
   background: rgba(0,0,0,0.03);
 }
 .card-image {
-  width: 300px;
-  height: 300px;
-  overflow: hidden;
-  object-fit: cover;
-  object-position: top;
-  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 40vh; /* scales with viewport */
+}
+img, video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* ensures full visibility */
 }
 .card-anim {
   width: 100%;
@@ -298,6 +311,7 @@ footer .social {
   transform: scale(1.05);
   will-change: transform;
 }
+
 
 /* Education Page Cards - side by side */
 .education-row {
@@ -506,45 +520,75 @@ footer .social {
 }
 
 /* Batchmates */
-.batchmates-card {
+.batchmate-lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.batchmate-card {
   background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
   border: 1px solid rgba(255,255,255,0.05);
   border-radius: 14px;
   box-shadow: 0 18px 48px rgba(2,8,23,0.55);
   padding: 24px;
-  max-width: 900px;
-  margin: 40px auto;
-  text-align: center;
+  flex: 1 1 400px;
+  max-width: 500px;
+  color: #cfeeff;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.batchmates-card:hover {
+.batchmate-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 24px 60px rgba(110,168,255,0.25);
 }
 
-.batchmates-photo {
-  margin-bottom: 20px;
+.batchmate-card h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #eaffff;
 }
 
-.batchmates-photo img {
-  width: 100%;       /* fills the card width */
-  height: auto;      /* keeps aspect ratio */
-  max-height: none;  /* removes any hidden limits */
-  border-radius: 12px;
-  object-fit: cover;
+.batchmate-card ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
 }
 
-.batchmates-photo img:hover {
-  transform: scale(1.02);
-}
-
-.batchmates-photo p {
-  margin-top: 12px;
+.batchmate-card li {
+  margin-bottom: 6px;
   font-size: 15px;
-  color: #cfeeff;
-  line-height: 1.6;
 }
+
+.batchmate-card li {
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.batchmates-row {
+  display: flex;
+  flex-wrap: nowrap;       /* keep them side by side */
+  justify-content: center; /* center the whole row */
+  align-items: flex-start; /* align to top */
+  gap: 24px;               /* spacing between items */
+  margin-top: 32px;
+}
+
+.batchmates-photo {
+  flex: 1 1 500px;         /* photo takes middle space */
+  max-width: 600px;
+  text-align: center;
+}
+
+.batchmate-card {
+  flex: 1 1 300px;         /* cards take side space */
+  max-width: 400px;
+}
+
 
 /* Responsive tweaks */
 @media (max-width: 700px) {
@@ -594,9 +638,3 @@ footer .social {
   transition: background-color 0.3s ease;
 }
 .fork-button:hover { background-color: #444c56; }
-
-
-
-
-
-
