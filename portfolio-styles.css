@@ -580,7 +580,7 @@ img, video {
 
 .batchmates-photo {
   flex: 1 1 500px;         /* photo takes middle space */
-  max-width: 600px;
+  max-width: 1000px;
   text-align: center;
 }
 
@@ -638,3 +638,4 @@ img, video {
   transition: background-color 0.3s ease;
 }
 .fork-button:hover { background-color: #444c56; }
+
