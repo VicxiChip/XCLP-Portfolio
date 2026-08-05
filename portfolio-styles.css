@@ -202,7 +202,6 @@ section {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.intro-block { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; }
 .animated-avatar { animation: float 3.6s ease-in-out infinite; }
 @keyframes float {
   0%   { transform: translateY(0px); }
