@@ -124,10 +124,10 @@ body.batchmates .tabs a[href="batchmates.html"] {
 /* Intro row layout */
 .intro-row {
   display: flex;
-  flex-wrap: wrap;       /* allows stacking on small screens */
+  flex-direction: column;       /* allows stacking on small screens */
   gap: 24px;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   margin: 40px auto;
   width: min(1100px, 94%);
 }
@@ -679,4 +679,35 @@ img, video {
 }
 .fork-button:hover { background-color: #444c56; }
 
+/* Intro row layout for avatar + info */
+.intro-row {
+  display: flex;
+  flex-wrap: wrap;       /* stack on small screens */
+  gap: 24px;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 40px auto;
+  width: min(1100px, 94%);
+}
 
+/* Override card defaults inside intro-row */
+.intro-row .card {
+  margin: 0;             /* remove auto-centering */
+  text-align: left;      /* align text to left */
+  align-items: flex-start;
+}
+
+/* Avatar card */
+.avatar-card {
+  flex: 1 1 280px;
+  max-width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Info card */
+.info-card {
+  flex: 2 1 500px;
+  max-width: 700px;
+}
