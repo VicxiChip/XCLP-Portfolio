@@ -121,59 +121,6 @@ body.batchmates .tabs a[href="batchmates.html"] {
   will-change: transform;
 }
 
-/* Intro row layout */
-.intro-row {
-  display: flex;
-  flex-direction: row;        /* side by side on larger screens */
-  gap: 24px;
-  justify-content: center;    /* center the whole row */
-  align-items: flex-start;    /* align cards at the top */
-  margin: 40px auto;
-  width: min(1100px, 94%);
-}
-
-/* Avatar card styling */
-.avatar-card {
-  flex: 1 1 280px;
-  max-width: 320px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;    /* align avatar to top */
-}
-
-.avatar-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-/* Info card styling */
-.info-card {
-  flex: 2 1 500px;
-  max-width: 700px;
-  text-align: left;           /* left-align text */
-  align-items: flex-start;    /* align content to top */
-}
-.info-card h2 {
-  margin-bottom: 12px;
-}
-.info-card p {
-  margin-bottom: 10px;
-}
-
-/* Responsive tweak: stack vertically on small screens */
-@media (max-width: 700px) {
-  .intro-row {
-    flex-direction: column;
-    align-items: center;
-  }
-  .info-card {
-    text-align: center;
-    align-items: center;
-  }
-}
-
 /* Layout and home card */
 main {
   position: relative;
@@ -691,35 +638,55 @@ img, video {
 }
 .fork-button:hover { background-color: #444c56; }
 
-/* Intro row layout for avatar + info */
+/* Intro row layout */
 .intro-row {
   display: flex;
-  flex-wrap: wrap;       /* stack on small screens */
+  flex-direction: row;        /* side by side on larger screens */
   gap: 24px;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: center;    /* center the whole row */
+  align-items: flex-start;    /* align cards at the top */
   margin: 40px auto;
   width: min(1100px, 94%);
 }
 
-/* Override card defaults inside intro-row */
-.intro-row .card {
-  margin: 0;             /* remove auto-centering */
-  text-align: left;      /* align text to left */
-  align-items: flex-start;
-}
-
-/* Avatar card */
+/* Avatar card styling */
 .avatar-card {
   flex: 1 1 280px;
   max-width: 320px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;    /* align avatar to top */
 }
 
-/* Info card */
+.avatar-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Info card styling */
 .info-card {
   flex: 2 1 500px;
   max-width: 700px;
+  text-align: left;           /* left-align text */
+  align-items: flex-start;    /* align content to top */
+}
+.info-card h2 {
+  margin-bottom: 12px;
+}
+.info-card p {
+  margin-bottom: 10px;
+}
+
+/* Responsive tweak: stack vertically on small screens */
+@media (max-width: 700px) {
+  .intro-row {
+    flex-direction: column;   /* stack vertically */
+    align-items: center;
+  }
+  .info-card {
+    text-align: center;
+    align-items: center;
+  }
 }
