@@ -639,6 +639,13 @@ img, video {
 .fork-button:hover { background-color: #444c56; }
 
 /* Intro row layout */
+/* Override card defaults inside intro-row */
+.intro-row .card {
+  margin: 0;               /* remove auto-centering */
+  text-align: left;        /* align text left */
+  align-items: flex-start; /* align content to top/left */
+}
+
 .intro-row {
   display: flex;
   flex-direction: row;        /* side by side on larger screens */
@@ -649,20 +656,19 @@ img, video {
   width: min(1100px, 94%);
 }
 
-/* Avatar card styling */
 .avatar-card {
-  flex: 1 1 280px;
+  flex: 0 0 280px;          /* fixed narrow width */
   max-width: 320px;
   display: flex;
   justify-content: center;
-  align-items: flex-start;    /* align avatar to top */
+  align-items: flex-start;
 }
 
-.avatar-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
+.info-card {
+  flex: 1;                  /* take remaining space */
+  max-width: 700px;
+  text-align: left;
+  align-items: flex-start;
 }
 
 /* Info card styling */
@@ -685,8 +691,8 @@ img, video {
     flex-direction: column;   /* stack vertically */
     align-items: center;
   }
-  .info-card {
-    text-align: center;
+  .intro-row .card {
+    text-align: center;       /* re-center text for mobile */
     align-items: center;
   }
 }
