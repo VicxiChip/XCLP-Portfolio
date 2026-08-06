@@ -9,20 +9,22 @@ html, body {
   scroll-behavior: smooth; 
 }
 
-html, body {
-  height: 100%;
+html, body { 
+  height: 100%; 
+  font-family: Inter, system-ui, Arial, sans-serif; 
+  background:#031021; 
+  color:#e6f2ff; 
+  scroll-behavior: smooth; 
   margin: 0;
-  overflow: hidden; /* no scroll */
+  /* REMOVE overflow: hidden; */
 }
 
 main {
-  height: 100vh;              /* fills the viewport height */
-  display: flex;              /* centers content */
-  flex-direction: column;
-  justify-content: center;    /* vertical centering */
-  align-items: center;        /* horizontal centering */
-  padding: 20px;
-  box-sizing: border-box;
+  position: relative;
+  min-height: 100vh;          /* allow page to grow taller */
+  z-index: 10;
+  padding: 120px 20px 40px;
+  display: block;             /* natural flow instead of forced centering */
 }
 
 /* Canvas background */
@@ -736,4 +738,9 @@ img, video {
 
 .contact-form button {
   align-self: flex-start;
+}
+
+.scroll-down {
+  text-align: center;
+  margin: 20px 0;
 }
