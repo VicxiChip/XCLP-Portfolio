@@ -744,3 +744,23 @@ img, video {
   text-align: center;
   margin: 20px 0;
 }
+
+/* Gallery card info */
+.card-info {
+  padding: 16px;
+  background: rgba(255,255,255,0.03);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+}
+
+.card-info h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #eaffff;
+}
+
+.card-info p {
+  font-size: 15px;
+  color: #cfeeff;
+  margin: 0;
+}
